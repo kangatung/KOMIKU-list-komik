@@ -3,8 +3,9 @@ from bs4 import BeautifulSoup
 
 '''
 Catatan Penggunaan:
-1. Menulis judul komik baru di komik-favorit.txt
-2. Menulis chapter komik baru di old-chap-komik.txt
+1. Masukkan data Chapter-New-Format ke dalam file data.txt
+2. Jalankan program get-data.py
+3. Jalankan program main.py
 
 '''
 #judul
@@ -69,12 +70,7 @@ for a in range(0,len(list_data_komik)):
     else:
         tidak_ada.append(data)
 
-#membuat file txt yang berisi chapter terbaru
-def make_new_chapter():
-    with open('new-chap-komik.txt','w') as file:
-        for a in range(0,len(ada_chapter)):
-            ada_komik = ada_chapter[a] + '\n'
-            file.write(ada_komik)
+
 
 
 #membuat file txt yang berisi judul yang salah atau tidak ada pada link
@@ -89,9 +85,9 @@ def make_wrong_name():
 def daftar_komik():
     with open('daftar-komik.txt','w') as file:
         for a in range(0,len(ada_judul)):
-            comic = f'{ada_judul[a]}old={list_data_chapter[a]} || new={ada_chapter[a]}\n\n'
+            comic = f'{ada_judul[a]}{list_data_chapter[a]} || new={ada_chapter[a]}\n\n'
             file.write(comic)
 
-make_new_chapter()
+
 make_wrong_name()
 daftar_komik()
