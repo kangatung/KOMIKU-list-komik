@@ -27,12 +27,13 @@ tidak_ada = []
 
 #https://komiku.com/manga/?page=47&status=&type=manhwa&order=latest
 #mendapatkan judul dan chapter
-for a in range(1,50): #UBAH BAGIAN INI
+for a in range(1,53): #UBAH BAGIAN INI
     url = f'https://komiku.com/manga/?page={a}&status=&type=manhwa&order=latest'
     html = requests.get(url)
     soup = BeautifulSoup(html.content,'html.parser')
     comic = soup.find_all(class_='tt')
     chapter = soup.find_all(class_='epxs')
+    print(a)
     for data in comic:
         list = data.text.split()
         data_list = []
@@ -63,11 +64,13 @@ with open('old-chap-komik.txt','r') as file:
 for a in range(0,len(list_data_komik)):
     data = list_data_komik[a] + ' '
     if data in comics:
+        print(f'ada {data}')
         ada_judul.append(data)
         posisi = comics.index(data)
         chap = chapters[posisi]
         ada_chapter.append(chap)
     else:
+        print(f'tidak ada {data}')
         tidak_ada.append(data)
 
 
