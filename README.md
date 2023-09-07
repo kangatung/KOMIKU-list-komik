@@ -4,12 +4,10 @@
 - Program ini akan menghasilkan daftar komik beserta chapter terakhir dari komik yang anda telah baca.
 
 <h2>Cara Penggunaan</h2>
-- Menulis judul komik baru di file komik-favorit.txt (format penulisan lihat file komik-favorit.txt).<br>
-- Menulis chapter komik baru di old-chap-komik.txt (format penulisan lihat file old-chap-komik.txt).<br>
-- Data chapter terbaru akan otomatis ditambahkan ke new-chap-komik.txt setelah program dijalankan<br>
-- file daftar-komik.txt akan berisi daftar lengkap komik beserta chapter.<br>
-- Jika ada data "komik baru" yang tidak ditemukan, maka komik tersebut akan ditambahkan ke file tidak-ada-judul.txt.<br>
-- Urutan antara judul komik dan chapter harus sama!!!!
+- Tempel daftar komik waiting list ke data.txt
+- Jalankan get-data.py(mendapatkan komik-favorit.txt dan old-chap-komik.txt)
+- Jalankan main.py(mendapatkan daftar-komik.txt dan tidak-ada-judul.txt)
+- Jalankan sub-main.py(mendapatkan ready.txt dan wait.txt)
 
 <h2>Cara Memperbaiki Judul Komik Pada File tidak-ada-judul.txt</h2>
 - Judul yang memiliki tanda "-" akan selalu ditambahkan ke tidak-ada-judul.txt<br>
